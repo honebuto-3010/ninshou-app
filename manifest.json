@@ -1,0 +1,25 @@
+{
+  "name": "OTP Viewer",
+  "short_name": "OTP",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f5f7",
+  "theme_color": "#f5f5f7",
+  "description": "Apple風UIでOTPを固定表示するPWA",
+  "icons": [
+    {
+      "src": "/icons/apple-style-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-style-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

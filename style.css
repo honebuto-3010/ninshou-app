@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* 初期状態（上に隠す） */
+#otp-bar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Apple風固定バー（ガラス風） */
+#otp-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+
+    background: rgba(245, 245, 247, 0.75); /* 少し透明度を上げてガラス感UP */
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    color: #111;
+
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    z-index: 9999;
+
+    /* iOS通知風アニメーション */
+    transition:
+        transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1),
+        opacity 0.3s ease-out;
+}
+
+/* 表示状態（スライドイン） */
+#otp-bar.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* iOS通知風の軽いバウンス */
+#otp-bar.bounce {
+    transform: translateY(6px);
+}
+
+/* ラベル */
+#otp-label {
+    font-weight: 600;
+    color: #555;
+}
+
+/* OTP数字 */
+#otp-value {
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+/* SPA画面領域 */
+#app {
+    margin-top: 80px;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+/* ボタン（Apple風） */
+button {
+    background: #007aff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:active {
+    opacity: 0.7;
+}

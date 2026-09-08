@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OTPを簡単に入力できるようにする">
+    <title>OTP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="otp-bar" class="hidden">
+    <span id="otp-label"></span>
+    <span id="otp-value"></span>
+</div>
+
+<div id="app"></div>
+    <script src="script.js"></script>
+    <script>
+           if ("serviceWorker" in navigator) {
+               navigator.serviceWorker.register("/service-worker.js");
+    }
+    </script>
+
+</body>
+</html>
