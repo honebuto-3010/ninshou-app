@@ -86,3 +86,58 @@ button {
 button:active {
     opacity: 0.7;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 0;
+
+    /* 透明度を少し上げて、より背景に溶け込む */
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(6px);
+
+    text-align: center;
+
+    /* 二重線の質感アップ（Apple風の繊細なライン） */
+    border-top: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 -0.5px 0 rgba(255,255,255,0.6) inset,
+                0 -1px 3px rgba(0,0,0,0.03);
+
+    z-index: 999;
+}
+
+/* タイトル（控えめ） */
+.footer-text {
+    font-size: 14px;
+    font-weight: 300; /* 少し細くして静けさアップ */
+    color: #666;
+    margin: 0;
+}
+
+/* サブテキスト（さらに控えめ） */
+.footer-sub {
+    font-size: 12px;
+    font-weight: 200;
+    color: #999;
+    margin: 4px 0 0;
+}
+
+/* スマホ専用の最適化 */
+@media (max-width: 480px) {
+    .footer {
+        padding: 14px 0;
+        background: rgba(255,255,255,0.70); /* さらに薄く */
+        backdrop-filter: blur(4px);
+    }
+
+    .footer-text {
+        font-size: 13px;
+    }
+
+    .footer-sub {
+        font-size: 9px;
+        white-space: nowrap;
+        letter-spacing: -0.2px;
+    }
+}
