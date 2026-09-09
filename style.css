@@ -35,6 +35,10 @@
         opacity 0.3s ease-out;
 }
 
+#otp-bar.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 /* 表示状態（スライドイン） */
 #otp-bar.visible {
     transform: translateY(0);
@@ -48,14 +52,15 @@
 
 /* ラベル */
 #otp-label {
-    font-weight: 600;
+    font-weight: 300;
+    font-size: 14px;
     color: #555;
 }
 
 /* OTP数字 */
 #otp-value {
-    font-weight: 700;
-    font-size: 22px;
+    font-weight: 400;
+    font-size: 14px;
     letter-spacing: 2px;
     color: #000;
 }
