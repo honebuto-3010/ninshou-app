@@ -5,6 +5,9 @@ function loadView(view) {
             <h2>ログイン画面</h2>
             <button onclick="simulateOTP()">認証コードを受信する</button>
         `;
+
+        // ★ ホーム画面に入ったら「Waiting for code…」を表示
+        showWaitingForCode();
     }
 
     if (view === "otp") {
@@ -15,6 +18,23 @@ function loadView(view) {
         `;
         monitorOTPInput();
     }
+}
+
+// ★ 初期状態：待機中テキストを表示
+function showWaitingForCode() {
+    const bar = document.getElementById("otp-bar");
+
+    document.getElementById("otp-label").textContent = "Waiting for code…";
+    document.getElementById("otp-value").textContent = "";
+
+    bar.classList.remove("hidden");
+    bar.classList.add("visible");
+
+    // iOS通知風バウンス（既存仕様を維持）
+    setTimeout(() => {
+        bar.classList.add("bounce");
+        setTimeout(() => bar.classList.remove("bounce"), 180);
+    }, 300);
 }
 
 // OTPバー表示（動的ラベル＋動的OTP）
@@ -56,7 +76,7 @@ function monitorOTPInput() {
 function simulateOTP() {
     const otp = String(Math.floor(100000 + Math.random() * 900000));
 
-    const labelFromService = "確認コード"; // ← 本番ではメール本文から取得
+    const labelFromService = "Code:"; // 英語版に統一
 
     showOTPBar(otp, labelFromService);
     loadView("otp");
@@ -64,3 +84,4 @@ function simulateOTP() {
 
 // 初期画面
 loadView("login");
+
